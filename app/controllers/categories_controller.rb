@@ -43,5 +43,9 @@ class CategoriesController < ApplicationController
     redirect_to articles_path
   end
 
+  private
+    def category_params
+      params.require(:category).permit(:title, :text)
+    end
 
 end
