@@ -1,11 +1,12 @@
-<h1><%= @category.name %></h1>
 
+<!-- This is our categories/show view. -->
+<h1><%= @category.name.capitalize %></h1>
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
-    <th colspan="2"></th>
   </tr>
+  <!-- Let's try to use a view helper here to make sure we're including the right objects in the @articles variable. -->
   <% @articles.each do |article| %>
   <tr>
     <td><%= link_to article.title, category_article_path(@category, article) %></td>
